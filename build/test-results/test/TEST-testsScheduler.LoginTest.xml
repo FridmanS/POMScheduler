@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testsScheduler.LoginTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-25T17:17:51" hostname="LAPTOP-A9FORBB3" time="13.64">
+  <properties/>
+  <testcase name="loginTestNegativeWithInvalidPassword" classname="testsScheduler.LoginTest" time="13.64"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Aug 25, 2021 8:17:50 PM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
