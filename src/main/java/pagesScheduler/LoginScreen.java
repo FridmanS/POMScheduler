@@ -16,7 +16,6 @@ public class LoginScreen extends BaseScreen{
     MobileElement passwordEditText;
     @AndroidFindBy(xpath = "//*[@resource-id = 'com.example.svetlana.scheduler:id/login_btn']")
     MobileElement loginButton;
-
     @AndroidFindBy(xpath = "//*[@resource-id = 'android:id/message']")
     MobileElement errorMessage;
 
@@ -36,7 +35,7 @@ public class LoginScreen extends BaseScreen{
         return new WizardScreen(driver);
     }
 
-    public LoginScreen loginWithDto(Authdto auth){
+    public LoginScreen fillLoginWithDto(Authdto auth){
         type(emailEditText, auth.getEmail());
         type(passwordEditText, auth.getPassword());
         return this;
@@ -51,5 +50,10 @@ public class LoginScreen extends BaseScreen{
     public boolean isErrPres() {
         shouldHave(errorMessage,"Wrong email or password", 10);
         return true;
+    }
+
+    public String getErrorText() {
+        should(errorMessage, 10);
+        return errorMessage.getText();
     }
 }

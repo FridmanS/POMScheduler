@@ -1,7 +1,6 @@
 package testsScheduler;
 
 import config.ConfigScheduler;
-import dto.AuthTest;
 import dto.Authdto;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,31 +15,10 @@ public class LoginTest extends ConfigScheduler {
                 .fillPassword("aA1234567$")
                 .clickLoginButtonPos()
                 .skipWizard()
-                .isFabAddPresenr();
+                .isFabAddPresent();
 
         Assert.assertTrue(isFabButtonPresent);
 
-    }
-
-    @Test
-    public void loginWithDto(){
-        AuthTest testA = new AuthTest()
-                .withEmail("abc@gmail.com")
-                .withPassword("aA1234567$");
-        AuthTest testB = new AuthTest()
-                .withEmail("abc@gmail.com");
-        Authdto dto = Authdto.builder()
-                .email("abc@gmail.com")
-                .password("aA1234567$")
-                .build();
-        boolean isFabPresent = new SplashScreen(driver)
-                .checkVersion("0.0.3")
-                .loginWithDto(dto)
-                .clickLoginButtonPos()
-                .skipWizard()
-                .isFabAddPresenr();
-
-        Assert.assertTrue(isFabPresent);
     }
 
     @Test
@@ -51,10 +29,24 @@ public class LoginTest extends ConfigScheduler {
                 .build();
         boolean errIsPres = new SplashScreen(driver)
                 .checkVersion("0.0.3")
-                .loginWithDto(dto)
+                .fillLoginWithDto(dto)
                 .clickLoginButtonNeg()
                 .isErrPres();
 
         Assert.assertTrue(errIsPres);
+    }
+
+    @Test
+    public void negativeLoginTest(){
+        Authdto dto = Authdto.builder()
+                .email("abc@gmail.com")
+                .password("aA1234567")
+                .build();
+        String err = new SplashScreen(driver)
+                .checkVersion("0.0.3")
+                .fillLoginWithDto(dto)
+                .clickLoginButtonNeg()
+                .getErrorText();
+        Assert.assertEquals(err, "Wrong email or password");
     }
 }
