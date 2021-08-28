@@ -1,5 +1,6 @@
 package pagesScheduler;
 
+import dto.EventDto;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -39,8 +40,26 @@ public class EditeCreateEventScreen extends BaseScreen{
         click(wageSave);
         return this;
     }
+
+    public EditeCreateEventScreen fillCreationEditForm(EventDto dto) {
+        type(title, dto.getTitle());
+        type(type, dto.getType());
+        hideKeyboard();
+        if(dto.getBreaks() > 0){
+            for(int i = 0; i < dto.getBreaks(); i++){
+                click(breakPlusButton);
+            }
+        }
+        click(wageEdit);
+        type(wageInput, Integer.toString(dto.getWage()));
+        hideKeyboard();
+        click(wageSave);
+        return this;
+    }
+
     public HomeScreen confirmCreationEvent(){
         click(confirmCreationEvent);
         return new HomeScreen(driver);
     }
+
 }
