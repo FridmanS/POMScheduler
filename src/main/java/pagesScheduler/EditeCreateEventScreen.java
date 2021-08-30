@@ -30,7 +30,7 @@ public class EditeCreateEventScreen extends BaseScreen{
         type(type, typeS);
         hideKeyboard();
         if(breaksS > 0){
-            for(int i = 0; i <= breaksS; i++){
+            for(int i = 0; i < breaksS; i++){
                 click(breakPlusButton);
             }
         }

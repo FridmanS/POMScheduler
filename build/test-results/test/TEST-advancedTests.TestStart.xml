@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="advancedTests.TestStart" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-30T17:53:59" hostname="LAPTOP-A9FORBB3" time="4.648">
+  <properties/>
+  <testcase name="dragDownWindowTest" classname="advancedTests.TestStart" time="4.648"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

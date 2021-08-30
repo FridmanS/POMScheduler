@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testsScheduler.EventCreateTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-28T13:34:23" hostname="LAPTOP-A9FORBB3" time="38.16">
-  <properties/>
-  <testcase name="eventCreationWithDtoTest" classname="testsScheduler.EventCreateTest" time="38.16"/>
-  <system-out><![CDATA[1
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
