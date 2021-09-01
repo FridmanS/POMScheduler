@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="advancedTests.SwipeTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-01T17:43:43" hostname="LAPTOP-A9FORBB3" time="5.623">
+  <properties/>
+  <testcase name="swipeLeftTest" classname="advancedTests.SwipeTests" time="5.623"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
