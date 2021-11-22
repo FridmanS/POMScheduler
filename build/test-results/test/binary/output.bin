@@ -1,0 +1,5 @@
+‡19:29:24 INFO  - Start find --> By.chained({By.xpath: //*[@resource-id = 'com.h6ah4i.android.example.advrecyclerview:id/button'][2]})
+‚19:29:24 INFO  - By.chained({By.xpath: //*[@resource-id = 'com.h6ah4i.android.example.advrecyclerview:id/button'][2]}) --> Found
+{19:29:24 INFO  - Start find --> By.xpath: //*[@resource-id = 'com.h6ah4i.android.example.advrecyclerview:id/drag_handle']
+v19:29:25 INFO  - By.xpath: //*[@resource-id = 'com.h6ah4i.android.example.advrecyclerview:id/drag_handle'] --> Found
+ 19:29:27 INFO  - DragDown Test

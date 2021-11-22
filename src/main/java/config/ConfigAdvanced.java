@@ -2,8 +2,12 @@ package config;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.events.EventFiringWebDriverFactory;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -13,6 +17,8 @@ import java.util.concurrent.TimeUnit;
 
 public class ConfigAdvanced {
     protected AppiumDriver<MobileElement> driver;
+
+    protected Logger logger = LoggerFactory.getLogger(ConfigAdvanced.class);
 
     @BeforeSuite
     public void setUp() throws MalformedURLException {
@@ -29,10 +35,14 @@ public class ConfigAdvanced {
 
         driver =new AppiumDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver = EventFiringWebDriverFactory.getEventFiringWebDriver(driver, new AppiumListener());
+        logger.info("Start app Advanced");
     }
 
     @AfterSuite
     public void tearDown(){
+        logger.info("Stop Advanced");
         driver.quit();
+
     }
 }

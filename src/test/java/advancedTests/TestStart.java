@@ -11,6 +11,7 @@ public class TestStart extends ConfigAdvanced {
         new DragScreen(driver)
                 .selectDraggableBasic()
                 .dragDown(4);
+        logger.info("DragDown Test");
     }
 
     @Test
